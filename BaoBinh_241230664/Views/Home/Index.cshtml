@@ -1,0 +1,19 @@
+﻿@model IEnumerable<BaoBinh_241230664.Models.Sach>
+<div class="banner"><img src="~/images/banner.jpg" alt="Banner" /></div>
+<div id="khuNoiDung">
+    <partial name="BaoBinh_MainContent" model="Model" />
+</div>
+
+@section Scripts {
+<script>
+    $(function () {
+        $('.menu-tl').on('click', function (e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            $('.menu li').removeClass('active');
+            $(this).parent().addClass('active');
+            $('#khuNoiDung').load('/Home/SachTheoTheLoai/' + id);
+        });
+    });
+</script>
+}

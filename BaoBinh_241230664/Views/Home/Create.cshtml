@@ -1,0 +1,27 @@
+﻿@model BaoBinh_241230664.Models.Sach
+<div class="section-head"><h3>Them sach</h3></div>
+<form asp-action="Create" method="post"> 
+<div>
+    <label asp-for="MaTl">The Loai</label>
+    <select asp-for="MaTl" asp-items="ViewBag.DsTheLoai"></select>
+</div>
+<div>
+    <label asp-for="TenSach">Ten Sach</label>
+    <input asp-for="TenSach" />
+    <span asp-validation-for="TenSach" style="color:blue"></span>
+</div>
+<div>
+    <label asp-for="Gia">Gia</label>
+    <input asp-for="Gia" />
+    <span asp-validation-for="Gia" style="color:blue"></span>
+</div>
+<div>
+    <label asp-for="Anh">Anh</label>
+    <input asp-for="Anh" />
+    <span asp-validation-for="Anh" style="color:blue"></span>
+</div>
+<button type="submit">Create</button>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
